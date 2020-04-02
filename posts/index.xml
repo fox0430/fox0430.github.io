@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Shuu&#39;s Personal Note</title>
     <link>/posts/</link>
@@ -23,7 +23,6 @@ I bought Razer Viper Ultimate. It is the first time I bought an expensive mouse,
 First impressions I Felt the body was light and a very fast connection for a wireless mouse.
 And the feel of the click bottom and sensor is very good.
 But I feel the mouse wheel is heavy.</description>
-      
     </item>
     
     <item>
@@ -40,7 +39,6 @@ Path: /etc/libinput/local-overrides.quirks
 Content:
 [Trackpoint Override] MatchUdevType=pointingstick AttrTrackpointMultiplier=2.5 TrackPoint is a really good pointing device!
 Reference Change TrackPoint speed under Linux? https://www.reddit.com/r/thinkpad/comments/b5gqsv/change_trackpoint_speed_under_linux/</description>
-      
     </item>
     
   </channel>
