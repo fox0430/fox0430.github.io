@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Shuu&#39;s Personal Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Mar 2020 03:38:19 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 19:10:19 +0900</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Failed upgrade k8s by kubespray</title>
+      <link>/posts/upgrade-k8s/</link>
+      <pubDate>Thu, 14 May 2020 19:10:19 +0900</pubDate>
+      
+      <guid>/posts/upgrade-k8s/</guid>
+      <description>I tried to upgrade v1.16.8 to v1.17.5 on the on-premise kubernetes cluster by kubespray. but, failed upgrade&amp;hellip;
+Environment  1 master node 8 worker node Upgrade k8s v1.16.8 to v1.17.5 All node are Ubuntu 18.04.4 LTS kubespray v2.13.0  Log It seemed to fail it here. Master node success but, worker node failed&amp;hellip;
+TASK [kubernetes/node : install | Copy kubeadm binary from download dir] **************************************************************************************************************** task path: /root/kubespray/roles/kubernetes/node/tasks/install.yml:2 The full traceback is: WARNING: The below traceback may *not* be related to the actual failure.</description>
+      
+    </item>
     
     <item>
       <title>Razer Viper Ultimate</title>

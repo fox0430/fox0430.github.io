@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.70.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Failed upgrade k8s by kubespray&nbsp;&ndash;&nbsp;Shuu&#39;s Personal Note</title><link rel="stylesheet" href="/css/core.min.88cdae4ac4508c0adfbff6ae17c11a9361caed7896e73507581a19190e2469215e17404b8d77fdc1bfc31753dce7e98f.css" integrity="sha384-iM2uSsRQjArfv/auF8Eak2HK7XiW5zUHWBoZGQ4kaSFeF0BLjXf9wb/DF1Pc5&#43;mP"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Failed upgrade k8s by kubespray" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Shuu's Personal Note</span></a></span>
+        <span class="header right-side"></span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Failed upgrade k8s by kubespray</h1><p class="article date">2020-05-14</p></section><article class="article markdown-body"><p>I tried to upgrade v1.16.8 to v1.17.5 on the on-premise kubernetes cluster by kubespray. but, failed upgrade&hellip;</p>
+<h2 id="environment">Environment</h2>
+<ul>
+<li>1 master node</li>
+<li>8 worker node</li>
+<li>Upgrade k8s v1.16.8 to v1.17.5</li>
+<li>All node are Ubuntu 18.04.4 LTS</li>
+<li>kubespray v2.13.0</li>
+</ul>
+<h2 id="log">Log</h2>
+<p>It seemed to fail it here.
+Master node success but, worker node failed&hellip;</p>
+<pre><code>TASK [kubernetes/node : install | Copy kubeadm binary from download dir] ****************************************************************************************************************
+task path: /root/kubespray/roles/kubernetes/node/tasks/install.yml:2
+The full traceback is:
+WARNING: The below traceback may *not* be related to the actual failure.
+File &quot;/tmp/ansible_synchronize_payload_vSZyEg/ansible_synchronize_payload.zip/ansible/module_utils/basic.py&quot;, line 2592, in run_command
+cmd = subprocess.Popen(args, **kwargs)
+File &quot;/usr/lib/python2.7/subprocess.py&quot;, line 394, in __init__
+errread, errwrite)
+File &quot;/usr/lib/python2.7/subprocess.py&quot;, line 1047, in _execute_child
+raise child_exception
+fatal: [k8s-worker1 -&gt; 192.168.1.101]: FAILED! =&gt; {
+&quot;changed&quot;: false,
+&quot;cmd&quot;: &quot;sshpass&quot;,
+&quot;invocation&quot;: {
+&quot;module_args&quot;: {
+&quot;_local_rsync_password&quot;: &quot;VALUE_SPECIFIED_IN_NO_LOG_PARAMETER&quot;,
+&quot;_local_rsync_path&quot;: &quot;rsync&quot;,
+&quot;_substitute_controller&quot;: false,
+&quot;archive&quot;: true,
+&quot;checksum&quot;: false,
+&quot;compress&quot;: false,
+&quot;copy_links&quot;: false,
+&quot;delete&quot;: false,
+&quot;dest&quot;: &quot;/usr/local/bin/kubeadm&quot;,
+&quot;dest_port&quot;: 22,
+&quot;dirs&quot;: false,
+&quot;existing_only&quot;: false,
+&quot;group&quot;: false,
+&quot;link_dest&quot;: null,
+&quot;links&quot;: null,
+&quot;mode&quot;: &quot;push&quot;,
+&quot;owner&quot;: false,
+&quot;partial&quot;: false,
+&quot;perms&quot;: true,
+&quot;private_key&quot;: null,
+&quot;recursive&quot;: null,
+&quot;rsync_opts&quot;: [],
+&quot;rsync_path&quot;: null,
+&quot;rsync_timeout&quot;: 0,
+&quot;set_remote_user&quot;: true,
+&quot;src&quot;: &quot;/tmp/releases/kubeadm-v1.17.5-amd64&quot;,
+&quot;ssh_args&quot;: null,
+&quot;times&quot;: null,
+&quot;verify_host&quot;: false
+}
+},
+&quot;msg&quot;: &quot;[Errno 2] No such file or directory&quot;,
+&quot;rc&quot;: 2
+}
+
+</code></pre><h2 id="solution">Solution</h2>
+<p>Edit roles/kubernetes/node/tasks/install.yml</p>
+<pre><code>- name: install | Copy kubeadm binary from download dir
+#  synchronize:
+  copy:
+    remote_src: true
+    src: &quot;{{ local_release_dir }}/kubeadm-{{ kubeadm_version }}-{{ image_arch }}&quot;
+    dest: &quot;{{ bin_dir }}/kubeadm&quot;
+    # compress: no
+    # perms: yes
+    # owner: no
+    # group: no
+  delegate_to: &quot;{{ inventory_hostname }}&quot;
+  tags:
+    - kubeadm
+  when:
+    - not inventory_hostname in groups['kube-master']
+</code></pre><pre><code>- name: install | Copy kubelet binary from download dir
+#  synchronize:
+  copy:
+    remote_src: true
+    src: &quot;{{ local_release_dir }}/kubelet-{{ kube_version }}-{{ image_arch }}&quot;
+    dest: &quot;{{ bin_dir }}/kubelet&quot;
+    # compress: no
+    # perms: yes
+    # owner: no
+    # group: no
+   delegate_to: &quot;{{ inventory_hostname }}&quot;
+   tags:
+     - kubelet
+</code></pre><p>Edit the two tasks as above and retry ansible-playbook command.</p>
+<h2 id="reference">Reference</h2>
+<p><a href="https://github.com/kubernetes-sigs/kubespray/issues/5675">https://github.com/kubernetes-sigs/kubespray/issues/5675</a></p>
+</article></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/posts/razer-viper-ultimate/"><span class="li">&rarr;</span>Razer Viper Ultimate</a></p></section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">Shuu's Personal Note</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section></body>
+
+</html>
