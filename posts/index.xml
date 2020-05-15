@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Shuu&#39;s Personal Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 May 2020 19:10:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2020 01:32:03 +0900</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Can not start and recompile the xmonad config file</title>
+      <link>/posts/cannot-start-xmonad/</link>
+      <pubDate>Sat, 16 May 2020 01:32:03 +0900</pubDate>
+      
+      <guid>/posts/cannot-start-xmonad/</guid>
+      <description>I tried starting the xmonad after upgrading Arch linux with pacman. But could not start. And, I tried to recompile the config file but I couldn&amp;rsquo;t.
+Log $ xmonad --recompile xmonad.hs:3:1: error: Could not load module ‘XMonad’ It is a member of the package ‘xmonad-0.15-INNaRsi8viXHVTtHIZOWoU’ which is unusable due to missing dependencies: X11-1.9.1-AFcCYyNZny21u722BShhIc data-default-0.7.1.1-KwmPSgEEmCp4io60ICryCw extensible-exceptions-0.1.1.4-4QtxTJe11myLMCZi4yvSzl setlocale-1.0.0.9-GbloffBFEmGB4tdjuaGaib utf8-string-1.0.1.1-IRxNMq5AVf036EceEkASq3 Use -v (or `:set -v` in ghci) to see a list of the files searched for.</description>
+      
+    </item>
     
     <item>
       <title>Failed upgrade k8s by kubespray</title>
