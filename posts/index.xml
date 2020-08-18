@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Shuu&#39;s Personal Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jul 2020 17:05:20 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 00:12:15 +0900</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Github Repo Does Not Show Travis CI</title>
+      <link>/posts/github-repo-does-not-show-travisci/</link>
+      <pubDate>Wed, 19 Aug 2020 00:12:15 +0900</pubDate>
+      
+      <guid>/posts/github-repo-does-not-show-travisci/</guid>
+      <description>Background Suddenly, Does not showed Travis CI in my Github repo.
+Solution Logout and login again to Travis CI
+Reference https://github.com/travis-ci/travis-ci/issues/8689</description>
+      
+    </item>
     
     <item>
       <title>Panic in istio-init on Centos8 Based kubernetes cluster</title>
