@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark"><title>Posts&nbsp;&ndash;&nbsp;Shuu&#39;s Personal Note</title><link rel="stylesheet" href="/css/core.min.ab321a2ad61315bebb72e6e3fa1108c4e8ffe4eada5cf5f20131d183a523496246d761df8fc832549be5b9dd47c40509.css" integrity="sha384-qzIaKtYTFb67cubj&#43;hEIxOj/5OraXPXyATHRg6UjSWJG12Hfj8gyVJvlud1HxAUJ"><link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Shuu's Personal Note" /><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Posts" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Shuu's Personal Note</span></a></span>
-        <span class="header right-side"></span></div></section><section id="content"><section class="article header"><h1>Posts</h1></section><ul class="note list"><li class="item"><a class="note" href="/posts/mouse-cursor-size-makes-huge/">
+        <span class="header right-side"></span></div></section><section id="content"><section class="article header"><h1>Posts</h1></section><ul class="note list"><li class="item"><a class="note" href="/posts/uninstall-istio/">
+            <p class="note title">Completely uninstall Istio</p><p class="note date">2021-02-13</p><p class="note content">If you want to uninstall istio on your Kubernetes cluster, Delete istio-system namespace is not enough to uninstall istio. Need to delete CRDs too.
+Can be completely uninstall follow this command. If you installed using istioctl and default profile.
+istioctl x uninstall --purge kubectl delete ns istio-system or
+istioctl manifest generate --set profile=default | kubectl delete -f - kubectl delete ns istio-system Refarences https://istio.io/latest/docs/setup/getting-started/#uninstall
+https://stackoverflow.com/questions/54261468/uninstall-istio-all-components-completely-from-kubernetes-cluster</p></a></li><li class="item"><a class="note" href="/posts/mouse-cursor-size-makes-huge/">
             <p class="note title">The mouse cursor size makes huge only when the cursor is on the GTK applications</p><p class="note date">2020-10-02</p><p class="note content">A few days ago, suddenly changed mouse cursor size. The mouse cursor size makes huge only when the cursor is on the GTK applications.
 Solution Add this line in the GTK setting (~/.config/gtk-3.0/settings.ini). You can set the size to your liking.
 gtk-cursor-theme-size = 16 </p></a></li><li class="item"><a class="note" href="/posts/github-repo-does-not-show-travisci/">

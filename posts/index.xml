@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Shuu&#39;s Personal Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Oct 2020 00:27:34 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Feb 2021 17:41:27 +0900</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Completely uninstall Istio</title>
+      <link>/posts/uninstall-istio/</link>
+      <pubDate>Sat, 13 Feb 2021 17:41:27 +0900</pubDate>
+      
+      <guid>/posts/uninstall-istio/</guid>
+      <description>If you want to uninstall istio on your Kubernetes cluster, Delete istio-system namespace is not enough to uninstall istio. Need to delete CRDs too.
+Can be completely uninstall follow this command. If you installed using istioctl and default profile.
+istioctl x uninstall --purge kubectl delete ns istio-system or
+istioctl manifest generate --set profile=default | kubectl delete -f - kubectl delete ns istio-system Refarences https://istio.io/latest/docs/setup/getting-started/#uninstall
+https://stackoverflow.com/questions/54261468/uninstall-istio-all-components-completely-from-kubernetes-cluster</description>
+      
+    </item>
     
     <item>
       <title>The mouse cursor size makes huge only when the cursor is on the GTK applications</title>

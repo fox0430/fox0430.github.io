@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Shuu&#39;s Personal Note</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Shuu&#39;s Personal Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Feb 2021 17:41:27 +0900</lastBuildDate>
+    
+        <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Completely uninstall Istio</title>
+      <link>/post/uninstall-istio/</link>
+      <pubDate>Sat, 13 Feb 2021 17:41:27 +0900</pubDate>
+      
+      <guid>/post/uninstall-istio/</guid>
+      <description>If you want to uninstall istio on your Kubernetes cluster, Delete istio-system namespace is not enough to uninstall istio. Need to delete CRDs too.
+Can be completely uninstall follow this command. If you installed using istioctl and demo profile.
+istioctl x uninstall --purge istioctl x uninstall profile=default </description>
+      
+    </item>
+    
+  </channel>
+</rss>

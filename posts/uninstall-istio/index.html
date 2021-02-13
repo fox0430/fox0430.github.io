@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Completely uninstall Istio&nbsp;&ndash;&nbsp;Shuu&#39;s Personal Note</title><link rel="stylesheet" href="/css/core.min.ab321a2ad61315bebb72e6e3fa1108c4e8ffe4eada5cf5f20131d183a523496246d761df8fc832549be5b9dd47c40509.css" integrity="sha384-qzIaKtYTFb67cubj&#43;hEIxOj/5OraXPXyATHRg6UjSWJG12Hfj8gyVJvlud1HxAUJ"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Completely uninstall Istio" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Shuu's Personal Note</span></a></span>
+        <span class="header right-side"></span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Completely uninstall Istio</h1><p class="article date">2021-02-13</p></section><article class="article markdown-body"><p>If you want to uninstall istio on your Kubernetes cluster,
+Delete <code>istio-system</code> namespace is not enough to uninstall istio.
+Need to delete CRDs too.</p>
+<p>Can be completely uninstall follow this command. If you installed using istioctl and default profile.</p>
+<pre><code>istioctl x uninstall --purge
+kubectl delete ns istio-system
+</code></pre><p>or</p>
+<pre><code>istioctl manifest generate --set profile=default | kubectl delete -f -
+kubectl delete ns istio-system
+</code></pre><h2 id="refarences">Refarences</h2>
+<p><a href="https://istio.io/latest/docs/setup/getting-started/#uninstall">https://istio.io/latest/docs/setup/getting-started/#uninstall</a></p>
+<p><a href="https://stackoverflow.com/questions/54261468/uninstall-istio-all-components-completely-from-kubernetes-cluster">https://stackoverflow.com/questions/54261468/uninstall-istio-all-components-completely-from-kubernetes-cluster</a></p>
+</article></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/posts/mouse-cursor-size-makes-huge/"><span class="iconfont icon-article"></span>The mouse cursor size makes huge only when the cursor is on the GTK applications</a></p></section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">Shuu's Personal Note</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p></div></section></body>
+
+</html>
