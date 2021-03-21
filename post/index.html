@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>Posts&nbsp;&ndash;&nbsp;Shuu&#39;s Personal Note</title><link rel="stylesheet" href="/css/core.min.ab321a2ad61315bebb72e6e3fa1108c4e8ffe4eada5cf5f20131d183a523496246d761df8fc832549be5b9dd47c40509.css" integrity="sha384-qzIaKtYTFb67cubj&#43;hEIxOj/5OraXPXyATHRg6UjSWJG12Hfj8gyVJvlud1HxAUJ"><link rel="alternate" type="application/rss+xml" href="/post/index.xml" title="Shuu's Personal Note" /><meta name="twitter:card" content="summary" />
+<meta name="supported-color-schemes" content="light dark"><title>Posts&nbsp;&ndash;&nbsp;Shuu&#39;s Personal Note</title><link rel="stylesheet" href="/css/core.min.db24d509394517ab20314e5a7b60f6c8ba9c33c7a31ba90272138bb555f028f51c9ca63d868beb0b7f43864537ce1920.css" integrity="sha384-2yTVCTlFF6sgMU5ae2D2yLqcM8ejG6kCchOLtVXwKPUcnKY9hovrC39DhkU3zhkg"><link rel="alternate" type="application/rss+xml" href="/post/index.xml" title="Shuu's Personal Note" /><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Posts" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">Shuu's Personal Note</span></a></span>
-        <span class="header right-side"></span></div></section><section id="content"><section class="article header"><h1>Posts</h1></section><ul class="note list"><li class="item"><a class="note" href="/post/uninstall-istio/">
-            <p class="note title">Completely uninstall Istio</p><p class="note date">2021-02-13</p><p class="note content">If you want to uninstall istio on your Kubernetes cluster, Delete istio-system namespace is not enough to uninstall istio. Need to delete CRDs too.
-Can be completely uninstall follow this command. If you installed using istioctl and demo profile.
-istioctl x uninstall --purge istioctl x uninstall profile=default </p></a></li></ul></section><section id="footer"><div class="footer-wrap">
+        <span class="header right-side"></span></div></section><section id="content"><section class="article header"><h1>Posts</h1></section><ul class="note list"><li class="item"><a class="note" href="/post/cannot-delete-openebs-pvc/">
+            <p class="note title">Can not delete a openEBS PVC</p><p class="note date">2021-03-21</p><p class="note content">Environment  Debian 10 buster Kubernete v1.19.7 openEBS v2.7.0  Background I try to delete PVC created by openEBS. But, I can not delete it.
+kubectl get pvc NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGECLASS AGE test-pvc Bound pvc-8d8b06d7-d5ee-4166-8b33-242f360072e0 100Mi RWO openebs-jiva-default 5m13s kubectl delete pvc test-pvc Error from server: error when deleting &quot;deployment.yaml&quot;: admission webhook &quot;admission-webhook.openebs.io&quot; denied the request: snapshots verification failed failed to list snapshot s related to volume: pvc-8d8b06d7-d5ee-4166-8b33-242f360072e0: volumesnapshots.<span class="mldr">&mldr;</span></p></a></li></ul></section><section id="footer"><div class="footer-wrap">
     <p class="copyright">Shuu's Personal Note</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 

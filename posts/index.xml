@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Shuu&#39;s Personal Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Feb 2021 17:41:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Mar 2021 22:44:53 +0900</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Can not delete a openEBS PVC</title>
+      <link>/posts/cannot-delete-openebs-pvc/</link>
+      <pubDate>Sun, 21 Mar 2021 22:44:53 +0900</pubDate>
+      
+      <guid>/posts/cannot-delete-openebs-pvc/</guid>
+      <description>Environment  Debian 10 buster Kubernete v1.19.7 openEBS v2.7.0  Background I try to delete PVC created by openEBS. But, I can not delete it.
+kubectl get pvc NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGECLASS AGE test-pvc Bound pvc-8d8b06d7-d5ee-4166-8b33-242f360072e0 100Mi RWO openebs-jiva-default 5m13s kubectl delete pvc test-pvc Error from server: error when deleting &amp;quot;deployment.yaml&amp;quot;: admission webhook &amp;quot;admission-webhook.openebs.io&amp;quot; denied the request: snapshots verification failed failed to list snapshot s related to volume: pvc-8d8b06d7-d5ee-4166-8b33-242f360072e0: volumesnapshots.</description>
+      
+    </item>
     
     <item>
       <title>Completely uninstall Istio</title>

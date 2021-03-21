@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://fox0430.github.io/posts/cannot-delete-openebs-pvc/</loc><lastmod>2021-03-21T22:44:53+09:00</lastmod></url><url>
+    <loc>https://fox0430.github.io/posts/</loc><lastmod>2021-03-21T22:44:53+09:00</lastmod></url><url>
+    <loc>https://fox0430.github.io/</loc><lastmod>2021-03-21T22:44:53+09:00</lastmod></url><url>
     <loc>https://fox0430.github.io/posts/uninstall-istio/</loc><lastmod>2021-02-13T17:41:27+09:00</lastmod></url><url>
-    <loc>https://fox0430.github.io/posts/</loc><lastmod>2021-02-13T17:41:27+09:00</lastmod></url><url>
-    <loc>https://fox0430.github.io/</loc><lastmod>2021-02-13T17:41:27+09:00</lastmod></url><url>
     <loc>https://fox0430.github.io/posts/mouse-cursor-size-makes-huge/</loc><lastmod>2020-10-02T00:27:34+09:00</lastmod></url><url>
     <loc>https://fox0430.github.io/posts/github-repo-does-not-show-travisci/</loc><lastmod>2020-08-19T00:12:15+09:00</lastmod></url><url>
     <loc>https://fox0430.github.io/posts/istio-on-centos8-based-k8s/</loc><lastmod>2020-07-31T17:05:20+09:00</lastmod></url><url>
